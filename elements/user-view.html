@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../bower_components/polymer/polymer.html" rel="import">
+</head>
+
+<dom-module id="user-view">
+  <style>
+	:host{
+		display: inline-block;
+		background-color: #eae9e9;
+		padding: 20px;
+		border-radius: 4px;
+		box-shadow: 1px 1px 5px #8e8e8e;
+		font-family: Helvetica;
+	}
+	
+    span{
+		background-color:yellow;
+		padding:3px;
+	}
+	
+	button{
+		border-radius: 4px;
+		padding: 5px
+	}
+  </style>
+  <template>
+	Name:<span>[[value]]</span>, Completed:<span>[[complete]]</span>  <button on-tap="doComplete">Complete</button>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "user-view",
+    properties: {
+			value:{
+				type:String,
+				value:""
+			},
+			complete:{
+				type:Boolean,
+				value:false,
+				observer:'compChanged'
+			}
+        },
+    compChanged: function(e){
+        if(e){ this.fire('complete',this); }
+    },
+	doComplete: function(e){
+		this.complete = !this.complete;
+	},
+    ready: function(e){
+        console.log(e);
+    }
+  });
+</script>

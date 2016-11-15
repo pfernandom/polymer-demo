@@ -1,0 +1,21 @@
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+		<link href="elements/name-card.html" rel="import">
+		<link href="elements/user-view.html" rel="import">
+
+    </head>
+    <body  fullbleed unresolved>
+		<h1>Demo Polymer</h1>
+		
+		<h2>Component 1: user-view</h2>
+        <span>(I'm a span, Shadow DOM does nothing to me)</span>
+		<user-view value="Samuel"></user-view>
+		
+		<h2>Component 1: name-card</h2>
+        <name-card first="Pedro" last="Marquez"></name-card>
+		
+    </body>
+</html>
